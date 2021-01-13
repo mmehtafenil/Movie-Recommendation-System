@@ -39,7 +39,7 @@
         </div>
         <div id="details">
           <br/>
-          <h6 id="title" style="background-color:#e2dddd85;">TITLE: &nbsp;{{title}}</h6>
+          <h6 id="title" style="color:white">TITLE: &nbsp;{{title}}</h6>
           <h6 id="overview" style="color:white;max-width: 85%">OVERVIEW: <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{overview}}</h6>
           <h6 id="vote_average" style="color:white;">RATING: &nbsp;{{vote_average}}/10 ({{vote_count}} votes)</h6>
           <h6 id="genres" style="color:white;">GENRE: &nbsp;{{genres}}</h6>
@@ -121,14 +121,18 @@
     
             <tbody>
 		      {% for review, status in reviews.items() if not reviews.hidden %}
-		      <tr style="background-color:#e5091485;">
-              	  <td>{{review}}</td>
-	              <td><center>
-	                  {{status}} : 
+		      <tr>
+                  <td> 
 	                  {% if status =='Good' %}
-	                    &#128515;
+                    <a style="background-color:#09e54b85;">{{review}}</a>
 	                  {% else %}
-	                    &#128534;
+                    <a style="background-color:#df1e3e8f;">{{review}}</a>
+	                  {% endif %}</td>
+	              <td><center> 
+	                  {% if status =='Good' %}
+                    <a style="background-color:#09e54b85;">{{status}} : &#128515;</a>
+	                  {% else %}
+                    <a style="background-color:#df1e3e8f;">{{status}} : &#128534;</a>
 	                  {% endif %}
 	                </center>
 	              </td>
